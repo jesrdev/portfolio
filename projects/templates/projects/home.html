@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <title>Jesús Sánchez</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/home.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">About</h4>
+              <p class="text-muted">
+                As a mechatronics engineer, I dicided to transition from
+                electricity and machines, to software engineering as the part I
+                enjoyed the most about engineering was the abstract process of
+                designing and programming systems. Not sure about returning to
+                industry or staying in some of the appealing new tech areas,
+                but, found out software is my thing.
+              </p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <!-- <h4 class="text-white">Contact</h4> -->
+              <ul class="list-unstyled">
+                <li>
+                  <a
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#exampleModal"
+                    class="text-white modal-btn"
+                    >Resume</a
+                  >
+                </li>
+                <li>
+                  <a href="//google.com" class="text-white"
+                    >This portfolio`s code</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarHeader"
+            aria-controls="navbarHeader"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <img src="{% static 'Me.jpg' %}" height="300" />
+            <h1 class="fw-light">Jesús Sánchez</h1>
+            <p class="lead text-muted">
+              The projects below are my first attempts to build personal tools.
+              I took a pragmatic approach, where they may be simple but I could
+              really make use of them. Focusing on developing javascript and
+              python as main tools in order to advance my tech skills and stack,
+              instead of focusing on certain area (frontend, backend, etc.).
+            </p>
+            <p>
+              <a
+                href="mailto:sanchezriv.jesus@gmail.com"
+                class="btn btn-primary my-2"
+                >Email me</a
+              >
+              <!--<a href="#" class="btn btn-secondary my-2">Secondary action</a>-->
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-main-section">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for project in projects.all %}
+            <div class="col">
+              <a href="{% url 'detail' project.id %}">
+                <div class="card shadow-sm">
+                  <img
+                    class="bd-placeholder-img card-img-top"
+                    width="100%"
+                    height="225"
+                    src="{{ project.image.url }}"
+                    focusable="false"
+                  />
+
+                  <div class="card-body">
+                    <p class="card-text">{{ project.summary }}.</p>
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <div class="btn-group">
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-outline-secondary"
+                        >
+                          View
+                        </button>
+                        <a href="//google.com">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            See code on GitHub
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <!-- Modal -->
+      <div class="modal-bg">
+        <div class="mymodal">
+          <img src="{% static 'Software-curriculum.jpeg' %}" height="98%" />
+        </div>
+        <span class="modal-close">X</span>
+      </div>
+    </main>
+
+    <!--<script src="{% static 'jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'popper.min.js' %}"></script>-->
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/home.js' %}"></script>
+  </body>
+</html>
