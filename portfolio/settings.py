@@ -14,6 +14,10 @@ import django_heroku
 from pathlib import Path
 import os
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -53,12 +57,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-CLOUDINARY_STORAGE = {
-             'CLOUD_NAME': 'hx43knqak',
-             'API_KEY': '715589317179431',
-             'API_SECRET': 'rzTUVgomC2Sxvov2IGVp74q4SsI'
-            }
 
 ROOT_URLCONF = 'portfolio.urls'
 
@@ -142,6 +140,11 @@ MEDIA_ROOT = BASE_DIR
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
 
 django_heroku.settings(locals())
+
+cloudinary.config( 
+  cloud_name = "hx43knqak", 
+  api_key = "715589317179431", 
+  api_secret = "rzTUVgomC2Sxvov2IGVp74q4SsI"
+)
