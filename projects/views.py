@@ -11,9 +11,9 @@ class PhotoForm(ModelForm):
 def homepage(request):
     context = NullBooleanField
     projects = Project.objects
-    return render(request, 'projects/home.html', {'projects':projects}) 
+    return render(request, 'projects/home.html', context, {'projects':projects}) 
 
 def detail(request, project_id):
     context = NullBooleanField
     project_detail = get_object_or_404(Project, pk=project_id)
-    return render(request, 'projects/detail.html', {'project':project_detail})
+    return render(request, 'projects/detail.html', context, {'project':project_detail})
