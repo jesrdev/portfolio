@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-import cloudinary
 import django_heroku
 from pathlib import Path
 import os
@@ -45,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'projects',
-     'cloudinary'
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
@@ -143,8 +142,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 django_heroku.settings(locals())
 
-cloudinary.config( 
-  cloud_name = "hx43knqak", 
-  api_key = "715589317179431", 
-  api_secret = "rzTUVgomC2Sxvov2IGVp74q4SsI"
-)
+#cloudinary.config( 
+#  cloud_name = "hx43knqak", 
+#  api_key = "715589317179431", 
+#  api_secret = "rzTUVgomC2Sxvov2IGVp74q4SsI"
+#)
