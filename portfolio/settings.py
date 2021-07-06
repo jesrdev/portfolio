@@ -30,7 +30,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-v#87m@p_3=9)b^=f8xcflp79%f+8%seq_c^$w$+xd0j&!!nh3#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -83,16 +83,16 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'd5rfvrlfv6qrh2',
-#        'USER': 'kblxbntsyohfna',
-#        'PASSWORD': 'befdd0e7020d4746274527421a4b410747aa28a0cbb3d001c608964bea47e3d8',
-#        'HOST': 'ec2-3-89-0-52.compute-1.amazonaws.com',
-#        'PORT': '5432',
-#    }
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd5rfvrlfv6qrh2',
+        'USER': 'kblxbntsyohfna',
+        'PASSWORD': 'befdd0e7020d4746274527421a4b410747aa28a0cbb3d001c608964bea47e3d8',
+        'HOST': 'ec2-3-89-0-52.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'hx43knqak',
@@ -152,8 +152,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 django_heroku.settings(locals())
 
-#cloudinary.config( 
-#  cloud_name = "hx43knqak", 
-#  api_key = "715589317179431", 
-#  api_secret = "rzTUVgomC2Sxvov2IGVp74q4SsI"
-#)
+cloudinary.config( 
+  cloud_name = 'hx43knqak', 
+  api_key = '715589317179431', 
+  api_secret = 'rzTUVgomC2Sxvov2IGVp74q4SsI'
+)
