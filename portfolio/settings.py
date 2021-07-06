@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'projects'
+    'projects',
+    'cloudinary_storage',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
@@ -51,6 +53,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CLOUDINARY_STORAGE = {
+             'CLOUD_NAME': 'hx43knqak',
+             'API_KEY': '715589317179431',
+             'API_SECRET': 'rzTUVgomC2Sxvov2IGVp74q4SsI'
+            }
 
 ROOT_URLCONF = 'portfolio.urls'
 
@@ -134,5 +142,6 @@ MEDIA_ROOT = BASE_DIR
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
 
 django_heroku.settings(locals())
