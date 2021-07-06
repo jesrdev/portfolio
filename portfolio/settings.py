@@ -16,8 +16,8 @@ import os
 
 import cloudinary
 import cloudinary_storage
-#import cloudinary.uploader
-#import cloudinary.api
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -83,16 +83,16 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd5rfvrlfv6qrh2',
-        'USER': 'kblxbntsyohfna',
-        'PASSWORD': 'befdd0e7020d4746274527421a4b410747aa28a0cbb3d001c608964bea47e3d8',
-        'HOST': 'ec2-3-89-0-52.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'd5rfvrlfv6qrh2',
+#        'USER': 'kblxbntsyohfna',
+#        'PASSWORD': 'befdd0e7020d4746274527421a4b410747aa28a0cbb3d001c608964bea47e3d8',
+#        'HOST': 'ec2-3-89-0-52.compute-1.amazonaws.com',
+#        'PORT': '5432',
+#    }
+#}
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'hx43knqak',
@@ -142,8 +142,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_URL = '/media/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
