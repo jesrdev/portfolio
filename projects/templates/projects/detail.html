@@ -77,9 +77,9 @@
           <div class="col-lg-6 col-md-8 mx-auto">
             <img src="{% static 'Free-time.jpeg' %}" height="300" />
             <h1 class="fw-light">{{ project.summary }}</h1>
-            <p class="lead text-muted left">
-              {{ project.specifics|linebreaks }}.
-            </p>
+            <div class="lead text-muted left">
+              {{ project.specifics|linebreaks }}
+            </div>
             <p>
               <a href="{{ project.app_url }}" class="btn btn-primary my-2"
                 >Open App</a
