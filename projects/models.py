@@ -5,7 +5,7 @@ from cloudinary.models import CloudinaryField
 class Project(models.Model):
     image = CloudinaryField('image', null=True)
     summary = models.CharField(max_length=200)
-    specifics = models.TextField(blank = True)
+    specifics = models.TextField(max_length=1000, blank = True)
     app_url = models.CharField(max_length=100)
 
     def __str__(self):
